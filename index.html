@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Abrar Taher</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            color: #FFFFFF;
+            font-size: 1.5rem; /* Equivalent to text-lg in Tailwind */
+            @apply bg-gray-900;
+        }
+        /* Custom scroll-behavior for smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Style for navigation links when active */
+        .nav-link.active {
+            @apply text-blue-400;
+        }
+        /* Hide scrollbar for aesthetic purposes, but keep functionality */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        /* For Firefox */
+        html {
+            scrollbar-width: none;
+        }
+
+        /* Basic styling for sections to ensure proper vertical spacing and 10% horizontal margin */
+        section {
+            @apply py-16 mx-[5%]; /* Apply margin to the section itself */
+        }
+        /* Home section specific background and height */
+        #home {
+            @apply min-h-screen bg-cover bg-center;
+        }
+
+        /* Styling for headings */
+        h1, h2, h3, h4 {
+            @apply text-white font-bold mb-4;
+        }
+        h1 { @apply text-4xl md:text-5xl; }
+        h2 { @apply text-3xl md:text-4xl; }
+        h3 { @apply text-2xl md:text-3xl; }
+        h4 { @apply text-xl md:text-2xl; }
+
+        /* General link styling */
+        a {
+            @apply text-blue-500 hover:text-blue-400 transition-colors duration-200;
+        }
+
+        /* Styling for skill and award boxes */
+        .skill-item, .award-item {
+            @apply bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center text-center;
+        }
+        .skill-item img, .award-item img {
+            @apply w-20 h-20 mb-4 rounded-full object-cover;
+        }
+
+        /* Styling for certificate images */
+        .certificate-img {
+            @apply w-full md:w-1/2 lg:w-1/3 p-2 object-cover rounded-lg shadow-md;
+        }
+
+        /* Styling for project boxes */
+        .project-item {
+            @apply bg-gray-800 p-6 rounded-lg shadow-lg;
+        }
+        .project-item img {
+            @apply w-full h-48 object-cover rounded-md mb-4;
+        }
+
+        /* Styling for education and experience items */
+        .edu-item, .exp-item {
+            @apply bg-gray-800 p-6 rounded-lg shadow-lg;
+        }
+        .edu-item img {
+            @apply w-24 h-24 rounded-full object-cover mb-4;
+        }
+        /* Styling for the circular image container in the home section */
+        .home-image-container {
+            width: 280px; /* Adjust size as needed */
+            height: 280px; /* Adjust size as needed */
+            border-radius: 50%;
+            overflow: hidden;
+            /* Reverting to a subtle border */
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .home-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Dropdown menu specific styles for mobile */
+        .mobile-menu {
+            @apply absolute top-full left-0 w-full bg-gray-800 shadow-lg lg:hidden;
+            display: none; /* Hidden by default */
+        }
+        .mobile-menu.open {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Header -->
+    <header class="bg-gray-800 py-4 shadow-md sticky top-0 z-50">
+        <div class="w-full px-[5%] flex justify-between items-center flex-wrap">
+            <h1 class="text-3xl font-bold text-white"><a href="/" class="hover:text-blue-400">Abrar</a></h1>
+            
+            <!-- Hamburger menu icon for mobile -->
+            <button id="menu-toggle" class="lg:hidden text-white text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex-grow lg:flex lg:justify-end">
+                <ul class="flex space-x-4 md:space-x-8 text-lg font-medium">
+                    <li><a href="#home" class="nav-link hover:text-blue-400">Home</a></li>
+                    <li><a href="#about" class="nav-link hover:text-blue-400">About</a></li>
+                    <li><a href="#research-interest" class="nav-link hover:text-blue-400">Research Interest</a></li>
+                    <li><a href="#publications" class="nav-link hover:text-blue-400">Publications</a></li>
+					<li><a href="#education" class="nav-link hover:text-blue-400">Education</a></li>
+					
+					
+                    
+                    <!-- More dropdown -->
+                    <li class="relative group">
+                        <button class="nav-link hover:text-blue-400 focus:outline-none flex items-center">
+                            More <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                        </button>
+                        <ul class="absolute hidden group-hover:block bg-gray-700 text-gray-200 shadow-lg rounded-md mt-2 w-48 z-20">
+                            <li><a href="#test-score" class="block px-4 py-2 hover:bg-gray-600 rounded-md">Test Score</a></li>
+                            <li><a href="#teaching-experience" class="block px-4 py-2 hover:bg-gray-600 rounded-md">Teaching Experience</a></li>
+                            <li><a href="#teaching-philosophy" class="block px-4 py-2 hover:bg-gray-600 rounded-md">Teaching Philosophy</a></li>
+                            <li><a href="#courses-taught" class="block px-4 py-2 hover:bg-gray-600 rounded-md">Course Taught</a></li>
+                            <li><a href="#skills" class="block px-4 py-2 hover:bg-gray-600 rounded-md">Skills</a></li>
+                            <li><a href="#extra-curricular" class="block px-4 py-2 hover:bg-gray-600 rounded-md">Extra Curricular Activities</a></li>
+                            <li><a href="#hobbies" class="block px-4 py-2 hover:bg-gray-600 rounded-md">Hobbies</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <ul class="flex flex-col items-center py-4 space-y-4">
+                <li><a href="#home" class="nav-link block px-4 py-2 hover:bg-gray-700 w-full text-center">Home</a></li>
+                <li><a href="#about" class="nav-link block px-4 py-2 hover:bg-gray-700 w-full text-center">About</a></li>
+                <li><a href="#research-interest" class="nav-link block px-4 py-2 hover:bg-gray-700 w-full text-center">Research Interest</a></li>
+                <li><a href="#education" class="nav-link block px-4 py-2 hover:bg-gray-700 w-full text-center">Education</a></li>
+                <li><a href="#test-score" class="nav-link block px-4 py-2 hover:bg-gray-700 w-full text-center">Test Score</a></li>
+                <li><a href="#publications" class="nav-link block px-4 py-2 hover:bg-gray-700 w-full text-center">Publications</a></li>
+                <li><a href="#teaching-experience" class="nav-link block px-4 py-2 hover:bg-gray-700 w-full text-center">Teaching Experience</a></li>
+                <li><a href="#teaching-philosophy" class="nav-link block px-4 py-2 hover:bg-gray-700 w-full text-center">Teaching Philosophy</a></li>
+                <li><a href="#courses-taught" class="nav-link block px-4 py-2 hover:bg-gray-700 w-full text-center">Course Taught</a></li>
+                <li><a href="#skills" class="nav-link block px-4 py-2 hover:bg-gray-700 w-full text-center">Skills</a></li>
+                <li><a href="#extra-curricular" class="nav-link block px-4 py-2 hover:bg-gray-700 w-full text-center">Extra Curricular Activities</a></li>
+                <li><a href="#hobbies" class="nav-link block px-4 py-2 hover:bg-gray-700 w-full text-center">Hobbies</a></li>
+                
+            </ul>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen relative py-16 mx-[5%] sm:mx-[10%]" style="background-image: url('https://media.istockphoto.com/id/1405021268/vector/gradient-glow-frame-shape.jpg?s=612x612&w=0&k=20&c=GFqlA5dPc14McaZ0M8QVK2FfDw8wWP1LEZ49n0aeEfI='); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div class="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-center text-center lg:text-left h-full">
+            <!-- Content on the left -->
+            <div class="w-full p-8 lg:p-16 z-10 mt-[80px] ml-[350px]">
+                <p class="text-base font-bold text-gray-300 mb-2 animate-fade-in-down uppercase">Hello, I'm</p>
+                <h2 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-4 animate-fade-in-down inline">Abrar Taher</h2>
+                <p class="text-lg text-gray-300 mb-8 animate-fade-in-up"><b>A Prospective Graduate Student</b></p>
+                <div class="flex items-center justify-center lg:justify-start gap-4 mb-8">
+                    <a href="Abrar Taher CV.pdf" 
+   target="_blank" 
+   class="inline-block bg-red-600 text-white py-3 px-6 rounded-full hover:bg-red-700 transition-colors duration-200 shadow-lg flex items-center gap-2">
+    View Resume
+</a>
+
+                </div>
+                <!-- Social media icons - using Font Awesome as placeholders -->
+           <div class="flex items-center justify-center lg:justify-start gap-4 text-3xl">
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/abrar-taher-707293174/" 
+       class="text-gray-400 hover:text-blue-400 transition-colors duration-200" 
+       target="_blank">
+       <i class="fab fa-linkedin"></i>
+    </a>
+
+    <!-- GitHub -->
+    <a href="https://github.com/Abrar171041075" 
+       class="text-gray-400 hover:text-blue-400 transition-colors duration-200" 
+       target="_blank">
+       <i class="fab fa-github"></i>
+    </a>
+
+    <!-- Google Scholar -->
+    <a href="https://scholar.google.com/citations?user=WHepTy8AAAAJ&hl=en&oi=ao" 
+       class="text-gray-400 hover:text-blue-400 transition-colors duration-200" 
+       target="_blank">
+       <i class="fas fa-graduation-cap"></i>
+    </a>
+
+    <!-- ResearchGate -->
+    <a href="https://www.researchgate.net/profile/Abrar-Taher" 
+       class="text-gray-400 hover:text-blue-400 transition-colors duration-200" 
+       target="_blank">
+       <i class="fas fa-flask"></i>
+    </a>
+</div>
+
+
+
+            </div>
+            <!-- Image on the right -->
+           <!-- <div class="flex-1 flex justify-center lg:justify-end p-8 lg:p-16 z-10 mt-[5px] ml-[10px]">
+                <div class="home-image-container">
+                    <img src="Photo-Abrar Taher.jpg" alt="Abrar Taher">
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-gray-900 py-16 mx-[5%] sm:mx-[10%]">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8">
+            <!-- Placeholder for About Me image -->
+            <img src="abrar.jpg" alt="About Me" class="w-full lg:w-1/2 rounded-lg shadow-xl mb-6 lg:mb-0">
+            <div class="text-center lg:text-left lg:w-1/2">
+                <h3 class="text-4xl font-bold text-white mb-4">About Me</h3>
+               <p class="text-gray-300 leading-relaxed mb-6 text-justify">
+    I am a Computer Science graduate and currently serving as a faculty member in the Computer Science program at Asian University for Women, Bangladesh.
+    I consider myself an active and dedicated professional who enjoys learning about new technologies and staying updated with emerging trends.
+    <br><br>
+    In the future, I aim to pursue higher studies and expand my research towards multimodal approaches that integrate computer vision, explainable AI, and language models to build better diagnostic tools. Alongside research, I enjoy sharing knowledge with my students, mentoring them in problem-solving, and encouraging them to connect theory with real-world applications.
+</p>
+
+                <p class="text-gray-400 mb-2">Email: abrarcuetcse@gmail.com</p>
+                <p class="text-gray-400 mb-4">Locate Me: Chittagong, Bangladesh</p>
+               
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-t border-gray-700 my-8 mx-[5%] sm:mx-[10%]">
+
+    <!-- Research Interest Section -->
+    <section id="research-interest" class="bg-gray-900 py-16 mx-[5%] sm:mx-[10%]">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-center text-5xl font-bold text-white mb-12">Research Interests</h1>
+            <div class="text-gray-300">
+                <ul class="list-disc list-inside space-y-2">
+                    <li>AI in Healthcare</li>
+                    <li>Explainable AI</li>
+                    <li>Medical Image Processing</li>
+                    <li>Computer Vision</li>
+                    <li>Deep Learning</li>
+                    <li>Machine Learning</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-t border-gray-700 my-8 mx-[5%] sm:mx-[10%]">
+
+    <!-- Skills Section -->
+    <section id="skills" class="bg-gray-900 py-16 mx-[5%] sm:mx-[10%]">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-center text-5xl font-bold text-white mb-12">Skills & Proficiencies</h1>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Programming Languages -->
+               <div class="skill-item">
+    <img src="code.jpg" alt="Programming Languages" width="100" height="100">
+    <h3 class="text-xl font-semibold text-white">Programming Languages</h3>
+    <ul class="list-none p-0 text-gray-400 text-base">
+    <li>- Python</li>
+    <li>- C</li>
+</ul>
+
+</div>
+
+                <!-- Frameworks & Libraries -->
+                <div class="skill-item">
+    <img src="framework.png" alt="Frameworks & Libraries" width="100" height="100">
+    <h3 class="text-xl font-semibold text-white">Frameworks & Libraries</h3>
+    <ul class="list-none p-0 text-gray-400 text-base">
+        <li class="before:content-['-'] before:mr-2">Keras</li>
+        <li class="before:content-['-'] before:mr-2">TensorFlow</li>
+        <li class="before:content-['-'] before:mr-2">PyTorch</li>
+        <li class="before:content-['-'] before:mr-2">Scikit-learn</li>
+        <li class="before:content-['-'] before:mr-2">Pandas</li>
+        <li class="before:content-['-'] before:mr-2">Seaborn</li>
+    </ul>
+</div>
+
+                <!-- Concepts -->
+                <div class="skill-item">
+    <img src="concept.jpg" alt="Concepts" width="100" height="100">
+    <h3 class="text-xl font-semibold text-white">Concepts</h3>
+    <ul class="list-none p-0 text-gray-400 text-base">
+        <li class="before:content-['-'] before:mr-2">Machine Learning</li>
+        <li class="before:content-['-'] before:mr-2">Deep Learning</li>
+        <li class="before:content-['-'] before:mr-2">Algorithms</li>
+    </ul>
+</div>
+
+                <!-- Visualization & Tools -->
+               <div class="skill-item">
+    <img src="tool.png" alt="Visualization & Tools" width="100" height="100">
+    <h3 class="text-xl font-semibold text-white">Visualization & Tools</h3>
+    <ul class="list-none p-0 text-gray-400 text-base">
+        <li class="before:content-['-'] before:mr-2">Lucidchart</li>
+        <li class="before:content-['-'] before:mr-2">Draw.io</li>
+        <li class="before:content-['-'] before:mr-2">Microsoft Power BI</li>
+        <li class="before:content-['-'] before:mr-2">Overleaf</li>
+        <li class="before:content-['-'] before:mr-2">PowerPoint</li>
+    </ul>
+</div>
+
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-t border-gray-700 my-8 mx-[5%] sm:mx-[10%]">
+
+   <!-- Publications Section -->
+<section id="publications" class="bg-gray-900 py-16 mx-[5%] sm:mx-[10%]">
+  <div class="max-w-7xl mx-auto">
+    <h1 class="text-center text-5xl font-bold text-white mb-12">Publications</h1>
+    <div class="text-gray-300">
+      <ul class="list-none space-y-8">
+        
+        <!-- Publication 1 -->
+        <li>
+          <p class="text-xl leading-relaxed text-justify">
+            A. Taher and S. Anan,  
+            <span class="italic">"Multiclass Brain Tumor Classification and Segmentation from 2D MR Images: A Deep Learning Approach Using Custom CNN and Residual Attention U-Net"</span>,  
+            26th International Conference on Computer and Information Technology (ICCIT), 2023.  
+            DOI: 10.1109/ICCIT60459.2023.10441606
+          </p>
+          <a href="https://www.researchgate.net/publication/378537441_Multiclass_Brain_Tumor_Classification_and_Segmentation_from_2D_MR_images_A_Deep_Learning_Approach_Using_Custom_CNN_and_Residual_Attention_U-Net" 
+             target="_blank" 
+             class="text-blue-400 underline text-lg">
+            Full Paper
+          </a>
+        </li>
+
+        <!-- Publication 2 -->
+        <li>
+          <p class="text-xl leading-relaxed text-justify">
+            A. Taher, W. I. Z. Ayon, and M. S. Hossain,  
+            <span class="italic">"Histopathological Image-Based Classification of Lung and Colon Cancer Using Deep Learning Architectures with Preprocessing Enhancements"</span>,  
+            27th International Conference on Computer and Information Technology (ICCIT), 2024.  
+            DOI: 10.1109/ICCIT64611.2024.11022478
+          </p>
+          <a href="https://www.researchgate.net/publication/390040531_Histopathological_Image-Based_Classification_of_Lung_and_Colon_Cancer_Using_Deep_Learning_Architectures_with_Preprocessing_Enhancements" 
+             target="_blank" 
+             class="text-blue-400 underline text-lg">
+            Full Paper
+          </a>
+        </li>
+
+        <!-- Publication 3 -->
+        <li>
+          <p class="text-xl leading-relaxed text-justify">
+            A. Taher and W. I. Z. Ayon,  
+            <span class="italic">"Exploring Sleep Disorders: A Comparative Analysis of Machine Learning Algorithms on Sleep Health and Lifestyle Data"</span>,  
+            IEEE International Conference on Power, Electrical, Electronics, and Industrial Applications (PEEIACON-24), 2024.  
+            DOI: 10.1109/PEEIACON63629.2024.10800593
+          </p>
+          <a href="https://www.researchgate.net/publication/386210997_Exploring_Sleep_Disorders_A_Comparative_Analysis_of_Machine_Learning_Algorithms_on_Sleep_Health_and_Lifestyle_Data" 
+             target="_blank" 
+             class="text-blue-400 underline text-lg">
+            Full Paper
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+
+    <hr class="border-t border-gray-700 my-8 mx-[5%] sm:mx-[10%]">
+
+<!-- Education Section -->
+<section id="education" class="bg-gray-900 py-16 mx-[5%] sm:mx-[10%]">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-center text-5xl font-bold text-white mb-12">Education</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Bachelor's Degree -->
+            <div class="edu-item col-span-1 md:col-span-2 lg:col-span-5">
+               
+                
+                <h3 class="text-2xl font-semibold text-white mt-4">B.Sc. in Computer Science and Engineering</h3>
+                
+                <p class="text-gray-300 text-lg text-justify mt-2">
+                    Institution: Chittagong University of Engineering & Technology (CUET)
+                </p>
+                <p class="text-gray-300 text-lg text-justify mt-1">
+                    CGPA: 3.37/4.00
+                </p>
+                <p class="text-white text-2xl font-bold text-justify mt-1">
+                    Last four semesters CGPA: 3.78/4.00
+                </p>
+                
+                <h4 class="text-blue-400 text-2xl font-bold mt-6">Thesis: A Deep Learning Approach for Multiclass Brain Tumor Classification and Segmentation</h4>
+                <p class="text-gray-300 text-lg text-justify mt-2">
+                    Supervisor: Ms. Sabiha Anan, Assistant Professor, Department of CSE
+                </p>
+                
+                <ul class="list-disc list-inside text-gray-300 mt-3 space-y-2 text-lg">
+                    <li class="text-justify">Developed a custom Convolutional Neural Network for multiclass brain tumor classification and a Residual Attention U-Net architecture for precise tumor segmentation.</li>
+                    <li class="text-justify">Conducted performance benchmarking against pretrained models while gaining hands-on experience with T1-weighted MR image preprocessing and feature extraction for small-scale tumors.</li>
+                </ul>
+            </div>
+            
+            <!-- Placeholder for other degrees if any -->
+        </div>
+    </div>
+</section>
+
+    <hr class="border-t border-gray-700 my-8 mx-[5%] sm:mx-[10%]">
+
+   <!-- Test Score Section -->
+<section id="test-score" class="bg-gray-900 py-16 mx-[5%] sm:mx-[10%]">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-center text-5xl font-bold text-white mb-12">Test Scores</h1>
+        <div class="text-gray-300 text-xl space-y-8">
+            
+            <!-- IELTS -->
+            <div>
+                <h3 class="text-3xl font-semibold text-white mb-4">
+                    IELTS - International English Language Testing System
+                </h3>
+                <ul class="list-none space-y-2 text-2xl">
+                    <li class="text-gray-300">Listening: <span class="text-white font-bold">8.0</span></li>
+                    <li class="text-gray-300">Reading: <span class="text-white font-bold">6.5</span></li>
+                    <li class="text-gray-300">Writing: <span class="text-white font-bold">6.5</span></li>
+                    <li class="text-gray-300">Speaking: <span class="text-white font-bold">6.5</span></li>
+                    <li class="text-gray-300">Overall Band Score: <span class="text-white font-bold">7.0</span></li>
+                </ul>
+            </div>
+
+            <!-- GRE -->
+            <div>
+                <h3 class="text-3xl font-semibold text-white mb-2">GRE</h3>
+                <p class="text-gray-300 text-2xl">To be appeared soon</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <hr class="border-t border-gray-700 my-8 mx-[5%] sm:mx-[10%]">
+
+    <!-- Teaching Experience Section -->
+<section id="teaching-experience" class="bg-gray-900 py-16 mx-[5%] sm:mx-[10%]">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-center text-5xl font-bold text-white mb-12">Teaching Experience</h1>
+        
+        <div class="space-y-12">
+            <!-- Experience 1 -->
+            <div class="exp-item">
+                <h3 class="text-2xl font-bold text-white">Junior Instructor</h3>
+                <h4 class="text-blue-400 text-xl font-semibold mt-1">Computer Science</h4>
+                <p class="text-gray-300 text-lg mt-1"><span class="font-semibold">Institution:</span> Asian University for Women</p>
+                <p class="text-gray-300 text-lg mt-1"><span class="font-semibold">Duration:</span> Jan 2024 - Present | Chittagong, Bangladesh</p>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="exp-item">
+                <h3 class="text-2xl font-bold text-white">Lecturer</h3>
+                <h4 class="text-blue-400 text-xl font-semibold mt-1">Department of CSE</h4>
+                <p class="text-gray-300 text-lg mt-1"><span class="font-semibold">Institution:</span> Port City International University</p>
+                <p class="text-gray-300 text-lg mt-1"><span class="font-semibold">Duration:</span> Jul 2023 - Jan 2024 | Chittagong, Bangladesh</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <hr class="border-t border-gray-700 my-8 mx-[5%] sm:mx-[10%]">
+
+   <!-- Teaching Philosophy Section -->
+<section id="teaching-philosophy" class="bg-gray-900 py-16 mx-[5%] sm:mx-[10%]">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-center text-5xl font-bold text-white mb-12">Teaching Philosophy</h1>
+        <div class="text-gray-300 leading-relaxed text-2xl">
+            <p class="mb-6 text-justify">
+                Serving in academia as a university teacher with students from different countries, backgrounds, and cultures, I maintain a task-based approach using the PPP (Present-Practice-Production) teaching method with a lead-in activity in my sessions. My class is not only for delivering lectures; rather, it is about sharing information and experiences and presenting technological paradigms to the students. I prefer both auditory and visual techniques to deliver lectures and to understand the needs analysis of my students.
+            </p>
+            <p class="mb-6 text-justify">
+                The most important part is that whatever they are learning in class, they can relate to the real world through necessary real-life examples. I maintain this strategy strictly because if they understand the outcomes of the topics, it makes the subject and concept more interesting rather than just memorizing them.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+    <hr class="border-t border-gray-700 my-8 mx-[5%] sm:mx-[10%]">
+
+    <!-- Courses Taught Section -->
+    <section id="courses-taught" class="bg-gray-900 py-16 mx-[5%] sm:mx-[10%]">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-center text-5xl font-bold text-white mb-12">Courses Taught</h1>
+            <div class="text-gray-300">
+                <p class="mb-4">Here is a list of courses I have taught or assisted in teaching:</p>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Computational Thinking & Programming</li>
+                    <li>Programming with Python</li>
+                    <li>Data Structures</li>
+                    <li>Discrete Mathematics</li>
+                    <li>Computer Fundamentals</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+  
+
+    
+
+    <hr class="border-t border-gray-700 my-8 mx-[5%] sm:mx-[10%]">
+
+   <!-- Extra Curricular Activities Section -->
+<section id="extra-curricular" class="bg-gray-900 py-16 mx-[5%] sm:mx-[10%]">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-center text-5xl font-bold text-white mb-12">Extra Curricular Activities</h1>
+        <div class="text-gray-300 text-xl space-y-4">
+            <p class="mb-4 text-justify text-2xl">
+                Beyond academics, I am actively involved in several extra-curricular activities:
+            </p>
+            <ul class="list-disc list-inside space-y-3 text-2xl text-gray-300">
+                <li>Participated in Professional Development Training, Asian University for Women</li>
+                <li>Attended Faculty Training & Development Program, Port City International University</li>
+                <li>Competed in the Regional Programming Contest, CUET-CSE Fest (2018)</li>
+                <li>Coordinated student-led events and workshops, fostering teamwork, creativity, and communication among participants.</li>
+                <li>Organized interactive activities and competitions that enhanced classroom participation and encouraged peer learning.</li>
+                <li>Volunteered for flood relief and fundraising campaigns</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+    <hr class="border-t border-gray-700 my-8 mx-[5%] sm:mx-[10%]">
+
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="bg-gray-900 py-16 mx-[5%] sm:mx-[10%]">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-center text-5xl font-bold text-white mb-12">My Hobbies</h1>
+            <div class="text-gray-300">
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Walking and exploring city streets</li>
+                    <li>Listening to music</li>
+                    <li>Watching K-dramas</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+ 
+
+    <hr class="border-t border-gray-700 my-8 mx-[5%] sm:mx-[10%]">
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-12 text-center mx-[5%] sm:mx-[10%]">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-400">
+            <div>
+                <h3 class="text-white text-2xl font-bold mb-4">Abrar's Portfolio</h3>
+                <p class="leading-relaxed mb-2">Thank you for visiting my personal portfolio website.</p>
+                
+            </div>
+            <div>
+                <h3 class="text-white text-xl font-bold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#home" class="hover:text-blue-400">Home</a></li>
+                    <li><a href="#about" class="hover:text-blue-400">About</a></li>
+                    <li><a href="#research-interest" class="hover:text-blue-400">Research Interest</a></li>
+                    <li><a href="#education" class="hover:text-blue-400">Education</a></li>
+                    <li><a href="#test-score" class="hover:text-blue-400">Test Score</a></li>
+                    <!-- More dropdown for footer quick links -->
+                    <li class="relative group">
+                        <button class="hover:text-blue-400 focus:outline-none flex items-center mx-auto md:mx-0">
+                            More <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                        </button>
+                        <ul class="absolute hidden group-hover:block bg-gray-700 text-gray-200 shadow-lg rounded-md mt-2 w-48 z-20 text-left">
+                            <li><a href="#publications" class="block px-4 py-2 hover:bg-gray-600 rounded-md">Publications</a></li>
+                            <li><a href="#teaching-experience" class="block px-4 py-2 hover:bg-gray-600 rounded-md">Teaching Experience</a></li>
+                            <li><a href="#teaching-philosophy" class="block px-4 py-2 hover:bg-gray-600 rounded-md">Teaching Philosophy</a></li>
+                            <li><a href="#courses-taught" class="block px-4 py-2 hover:bg-gray-600 rounded-md">Course Taught</a></li>
+                            <li><a href="#skills" class="block px-4 py-2 hover:bg-gray-600 rounded-md">Skills</a></li>
+                            <li><a href="#extra-curricular" class="block px-4 py-2 hover:bg-gray-600 rounded-md">Extra Curricular Activities</a></li>
+                            <li><a href="#hobbies" class="block px-4 py-2 hover:bg-gray-600 rounded-md">Hobbies</a></li>
+                         
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white text-xl font-bold mb-4">Contact Info</h3>
+                <p class="mb-2"> Email: <a href="mailto:abrar.cuetcse@gmail.com" class="hover:text-blue-400" target="_blank">abrar.cuetcse@gmail.com</a></p>
+                <p class="mb-2"> LinkedIn: <a href="https://www.linkedin.com/in/abrar-taher-707293174/" class="hover:text-blue-400" target="_blank">Abrar Taher</a></p>
+      
+                <p class="mb-2"> GitHub: <a href="https://github.com/Abrar171041075" class="hover:text-blue-400" target="_blank">Abrar171041075</a></p>
+                <p class="mb-2"> Scholar: <a href="https://scholar.google.com/citations?user=WHepTy8AAAAJ&hl=en&oi=ao" class="hover:text-blue-400" target="_blank">Abrar Taher</a></p>
+                <p class="mb-2"> ResearchGate: <a href="https://www.researchgate.net/profile/Abrar-Taher" class="hover:text-blue-400" target="_blank" target="_blank">Abrar Taher</a></p>
+            </div>
+        </div>
+        <div class="mt-8 text-gray-500">
+            <p>&copy; <a href="#" class="hover:text-blue-400">Abrar Taher</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('open');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.remove('open');
+            });
+        });
+    </script>
+
+</body>
+</html>
