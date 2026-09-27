@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrar Taher - Academic Profile</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #374151;
+            padding-top: 4rem;
+        }
+
+        .fixed-header {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .primary-accent {
+            color: #b91c1c;
+        }
+        
+        .primary-accent:hover {
+            text-decoration: underline;
+        }
+
+        .section-title {
+            color: #991b1b;
+            font-size: 1.5rem;
+            font-weight: 600;
+            border-bottom: 2px solid #fca5a5;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .news-item {
+            display: flex;
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+        .news-item-date {
+            flex-shrink: 0;
+            width: 7rem;
+            font-weight: 600;
+            color: #6b7280;
+        }
+        .news-item-content {
+            flex-grow: 1;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-red': '#b91c1c',
+                        'header-red': '#991b1b',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white">
+
+    <!-- Navigation Header -->
+    <header class="fixed-header fixed top-0 left-0 right-0 z-10 bg-header-red text-white py-3 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <h1 class="text-xl font-bold">Abrar Taher</h1>
+            <nav class="space-x-4 text-sm font-medium hidden md:block">
+                <a href="#home" class="hover:text-red-200">Home</a>
+                <a href="#education" class="hover:text-red-200">Education</a>
+                <a href="#skills" class="hover:text-red-200">Skills</a>
+                <a href="#publications" class="hover:text-red-200">Publications</a>
+                <a href="#teaching" class="hover:text-red-200">Teaching</a>
+                <a href="#honors" class="hover:text-red-200">Awards</a>
+                <a href="#services" class="hover:text-red-200">Services</a>
+                <a href="#extracurricular" class="hover:text-red-200">Extracurricular</a>
+                <a href="CV Abrar Taher.pdf" target="_blank" class="hover:text-red-200 font-bold">CV</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+        
+        <h1 class="text-3xl font-bold mb-6 mt-4">Abrar Taher</h1>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <!-- Left Sidebar -->
+            <aside class="lg:w-1/4 w-full flex-shrink-0">
+                <div class="p-4 rounded-lg">
+                    <img 
+                        src="abrar.jpg" 
+                        alt="Abrar Taher Profile Picture" 
+                        class="w-40 h-auto rounded-lg mb-4 border-2 border-gray-300 shadow-md object-cover"
+                        onerror="this.onerror=null; this.src='https://placehold.co/200x250/d3d3d3/555?text=Image+Missing';"
+                    >
+
+                    <div class="text-sm space-y-1">
+                        <p class="font-semibold mt-2">Junior Instructor</p>
+                        <p>Department of Computer Science</p>
+                        <p><a href="https://asian-university.org" target="_blank" class="primary-accent">Asian University For Women</a></p>
+                        <p class="pt-2">Chittagong, Bangladesh</p>
+                        <p>Email: <a href="mailto:abrarcuetcse@gmail.com" class="primary-accent">abrarcuetcse@gmail.com</a></p>
+                        <p class="mt-4 space-x-2">
+                            <a href="https://scholar.google.com/citations?user=WHepTy8AAAAJ&hl=en&oi=ao" target="_blank" class="primary-accent">Google Scholar</a> |
+                            <a href="https://www.researchgate.net/profile/Abrar-Taher" target="_blank" class="primary-accent">ResearchGate</a> |
+                            <a href="https://www.linkedin.com/in/abrar-taher-707293174/" target="_blank" class="primary-accent">LinkedIn</a> |
+                            <a href="https://github.com/Abrar171041075" target="_blank" class="primary-accent">GitHub</a>
+                        </p>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Right Content Area -->
+            <section class="lg:w-3/4 w-full">
+                
+                <!-- Biography -->
+                <div id="home" class="mb-8">
+                    <p class="font-semibold mb-2">Biography:</p>
+                    <p class="text-base leading-relaxed text-justify">
+                        I am a Computer Science and Engineering graduate and currently serve as a Junior Instructor in the Computer Science program at Asian University for Women, Bangladesh. My research lies at the intersection of deep learning, medical image analysis, multimodal learning, computer vision, and trustworthy AI.
+                    </p>
+                    <p class="text-base leading-relaxed text-justify mt-3">
+                        My work focuses on developing learning systems that extract and integrate clinically meaningful information from complex biomedical data, including MRI, X-ray, histopathological, and retinal fundus images. I am particularly interested in pathology-preserving feature extraction, explainable AI (XAI), knowledge distillation, and federated learning for healthcare applications.
+                    </p>
+                    <p class="text-base leading-relaxed text-justify mt-3">
+                        <b>I am actively seeking PhD opportunities in medical image processing, multimodal representation learning, and interpretable AI systems for healthcare.</b>
+                    </p>
+                </div>
+
+                <!-- Research Interests -->
+                <div id="research-directions" class="mb-8">
+                    <p class="font-semibold mb-2">Research Interests:</p>
+                    <ol class="list-decimal pl-5 text-base space-y-1">
+                        <li><span class="font-semibold">Multimodal Information Retrieval</span></li>
+                        <li><span class="font-semibold">AI in Healthcare</span></li>
+                        <li><span class="font-semibold">Medical Image Processing</span></li>
+                        <li><span class="font-semibold">Computer Vision</span></li>
+                        <li><span class="font-semibold">Explainable AI</span></li>
+                        <li><span class="font-semibold">Deep Learning & Statistical ML</span></li>
+                    </ol>
+                    <p class="mt-3">
+                        <a href="Research Interest Statement.pdf" target="_blank" class="primary-accent font-semibold">Read Full Research Interest Statement (PDF)</a>
+                    </p>
+                </div>
+
+                <!-- Ongoing Work -->
+                <h2 id="ongoing-work" class="section-title">Ongoing Work</h2>
+                <div class="space-y-4 text-base">
+                    <p class="font-semibold mb-1 primary-accent">Master's Thesis: Pathology Preserving Lesion-Vessel Interaction Learning for Progression-Aware Diabetic Retinopathy Grading</p>
+                    <p class="text-sm ml-4 text-justify"> 
+                        Investigating retinal biomarker characteristics and lesion-vessel structural relationships to capture clinically relevant pathological and vascular information across different stages of diabetic retinopathy. Integrating vascular abnormalities with progression-aware ordinal learning to model ordered disease severity transitions, while exploring knowledge distillation to transfer diagnostic representations to lightweight deployment models.
+                    </p>
+                </div>
+
+                <!-- Education -->
+                <h2 id="education" class="section-title">Education</h2>
+                <div class="space-y-6 text-sm">
+                    <div class="border-l-4 border-primary-red pl-4 py-2 bg-gray-50 rounded-lg">
+                        <p class="text-base font-bold text-gray-800">Chittagong University of Engineering and Technology</p>
+                        <p class="italic text-gray-600">M.Sc. in Computer Science and Engineering (2024 – 2026)</p>
+                        <div class="mt-2 space-y-1">
+                            <p><span class="font-semibold">CGPA:</span> 3.83 / 4.00 (Thesis Pending)</p>
+                            <p><span class="font-semibold">Thesis:</span> Pathology Preserving Lesion-Vessel Interaction Learning for Progression-Aware Diabetic Retinopathy Grading</p>
+                            <p><span class="font-semibold">Courses:</span> Computer Vision, Big Data, Natural Language Processing, Computer Arithmetic, Bioinformatics.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-l-4 border-primary-red pl-4 py-2 bg-gray-50 rounded-lg">
+                        <p class="text-base font-bold text-gray-800">Chittagong University of Engineering and Technology</p>
+                        <p class="italic text-gray-600">B.Sc. in Computer Science and Engineering (2018 – 2023)</p>
+                        <div class="mt-2 space-y-1">
+                            <p><span class="font-semibold">CGPA:</span> 3.37 / 4.00 (Last four semesters CGPA: 3.78 / 4.00)</p>
+                            <p><span class="font-semibold">Thesis:</span> A Deep Learning Approach for Multiclass Brain Tumor Classification and Segmentation</p>
+                            <p><span class="font-semibold">Supervisor:</span> Ms. Sabiha Anan, Assistant Professor, Dept. of CSE</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <h2 id="skills" class="section-title">Skills & Test Scores</h2>
+                <div class="space-y-4 text-sm">
+                    <p class="font-semibold mt-4 mb-2 primary-accent">Programming & Data Stack</p>
+                    <ul class="list-disc pl-5 space-y-1 ml-4">
+                        <li><span class="font-semibold">Languages:</span> Python, C, PHP, MySQL</li>
+                        <li><span class="font-semibold">Frameworks & Libraries:</span> PyTorch, TensorFlow, Keras, Scikit-learn, Pandas, Seaborn, Matplotlib</li>
+                    </ul>
+
+                    <p class="font-semibold mt-4 mb-2 primary-accent">Paradigms & Core Domains</p>
+                    <ul class="list-disc pl-5 space-y-1 ml-4">
+                        <li><span class="font-semibold">AI/ML:</span> Machine Learning, Deep Learning, Computer Vision, Medical Image Processing, Explainable AI</li>
+                        <li><span class="font-semibold">Theoretical:</span> Algorithm Design, Statistical Modeling</li>
+                    </ul>
+
+                    <p class="font-semibold mt-4 mb-2 primary-accent">Tools & Environments</p>
+                    <ul class="list-disc pl-5 space-y-1 ml-4">
+                        <li><span class="font-semibold">Tools:</span> Colab, Jupyter, Kaggle, Git/GitHub, Overleaf, Draw.io, Lucidchart, Power BI</li>
+                        <li><span class="font-semibold">Web Development:</span> HTML5, CSS3, Node.js</li>
+                    </ul>
+
+                    <p class="font-semibold mt-4 mb-2 primary-accent">Language Proficiency</p>
+                    <ul class="list-disc pl-5 space-y-1 ml-4">
+                        <li><span class="font-semibold">IELTS Academic:</span> Overall Band Score 7.0 (Listening: 8.0, Reading: 6.5, Writing: 6.5, Speaking: 6.5)</li>
+                    </ul>
+                </div>
+
+                <!-- Publications -->
+                <h2 id="publications" class="section-title">Publications</h2>
+                <div class="space-y-3 text-sm">
+                    <p class="font-semibold mt-4 mb-2">Conference Papers & Accepted Articles</p>
+                    <ul class="list-disc pl-5 space-y-2 ml-4">
+                        <li>
+                            "TrustKD-LULC: Reliable Knowledge Distillation for Remote Sensing Image Classification", <i>ICECER 2026</i> (Accepted).
+                        </li>
+                        <li>
+                            S. Saikat, <b>A. Taher</b>, et al. "An Explainable Ensemble Framework for Multi-Level Diabetic Retinopathy Classification", <i>2026 IEEE 2nd International Conference on Quantum Photonics, Artificial Intelligence, and Networking (QPAIN)</i>. 
+                            <a href="https://doi.org/10.13140/RG.2.2.27830.05443" target="_blank" class="primary-accent">[DOI]</a>
+                        </li>
+                        <li>
+                            S. Mallick, A. Debnath, <b>A. Taher</b>, et al. "Early Detection of Diabetic Retinopathy using Novel Pre-Processing of Retinal Fundus Images", <i>2026 IEEE 2nd International Conference on Quantum Photonics, Artificial Intelligence, and Networking (QPAIN)</i>. 
+                            <a href="https://doi.org/10.13140/RG.2.2.27410.62400" target="_blank" class="primary-accent">[DOI]</a>
+                        </li>
+                        <li>
+                            A. Debnath, S. Mallick, <b>A. Taher</b>, et al. "Gamma-CLAHE Enhanced InceptionV3 for Alzheimer's and Parkinson's Disease Detection with Explainable MRI Insights", <i>2026 IEEE 2nd International Conference on Quantum Photonics, Artificial Intelligence, and Networking (QPAIN)</i>. 
+                            <a href="https://doi.org/10.13140/RG.2.2.32863.21920" target="_blank" class="primary-accent">[DOI]</a>
+                        </li>
+                        <li>
+                            S. Mallick, A. Debnath, <b>A. Taher</b>, and A. Mozumder. "BreaKNet: Fusing Depthwise Convolutional and Shifted-Window Attention Features for Multiclass Breast Tumor Subtype Classification on Histopathological Images", <i>Proceedings of the 2026 6th International Conference on Electrical, Computer and Energy Technologies (ICECET)</i>.
+                        </li>
+                        <li>
+                            <b>A. Taher</b>, W. I. Z. Ayon, and M. S. Hossain (2024). "Histopathological Image-Based Classification of Lung and Colon Cancer Using Deep Learning Architectures with Preprocessing Enhancements", <i>27th International Conference on Computer and Information Technology (ICCIT)</i>. 
+                            <a href="https://doi.org/10.1109/ICCIT64611.2024.11022478" target="_blank" class="primary-accent">[DOI]</a>
+                        </li>
+                        <li>
+                            <b>A. Taher</b> and W. I. Z. Ayon (2024). "Exploring Sleep Disorders: A Comparative Analysis of Machine Learning Algorithms on Sleep Health and Lifestyle Data", <i>IEEE International Conference on Power, Electrical, Electronics, and Industrial Applications (PEEIACON-24)</i>. 
+                            <a href="https://doi.org/10.1109/PEEIACON63629.2024.10800593" target="_blank" class="primary-accent">[DOI]</a>
+                        </li>
+                        <li>
+                            <b>A. Taher</b> and S. Anan (2023). "Multiclass Brain Tumor Classification and Segmentation from 2D MR Images: A Deep Learning Approach Using Custom CNN and Residual Attention U-Net", <i>26th International Conference on Computer and Information Technology (ICCIT)</i>, pp. 1–6. 
+                            <a href="https://doi.org/10.1109/ICCIT60459.2023.10441606" target="_blank" class="primary-accent">[DOI]</a>
+                        </li>
+                    </ul>
+
+                    <p class="mt-4">
+                        <a href="Research_Summary_Abrar.pdf" target="_blank" class="primary-accent font-semibold">View Comprehensive Research Summary (PDF)</a>
+                    </p>
+                </div>
+
+                <!-- Teaching & Academic Work -->
+                <h2 id="teaching" class="section-title">Teaching & Work Experience</h2>
+                <div class="space-y-3 text-sm">
+                    <p class="font-semibold mt-4 mb-1">Asian University For Women — Department of Computer Science</p>
+                    <p class="text-xs text-gray-500 italic mb-2">Junior Instructor (January 14, 2024 – Present)</p>
+                    <ul class="list-disc pl-5 space-y-1 ml-4">
+                        <li><span class="font-semibold">COMP500: Computational Thinking and Programming</span></li>
+                        <li><span class="font-semibold">COMP600: Advanced Programming with Python</span></li>
+                        <li><span class="font-semibold">COMP400: Computer Fundamentals</span></li>
+                        <li><span class="font-semibold">COMP100: Computer Literacy</span></li>
+                        <li><span class="font-semibold">Harvard CS50 Course Facilitation</span></li>
+                    </ul>
+
+                    <p class="font-semibold mt-4 mb-1">Port City International University — Dept. of CSE</p>
+                    <p class="text-xs text-gray-500 italic mb-2">Lecturer (July 04, 2023 – January 03, 2024)</p>
+                    <ul class="list-disc pl-5 space-y-1 ml-4">
+                        <li><span class="font-semibold">Structured Programming</span></li>
+                        <li><span class="font-semibold">Discrete Mathematics</span></li>
+                        <li><span class="font-semibold">Computer Fundamentals and Programming Techniques</span></li>
+                    </ul>
+                </div>
+
+                <!-- Honors and Awards -->
+                <h2 id="honors" class="section-title">Honors and Awards</h2>
+                <div class="space-y-3 text-sm">
+                    <ul class="list-disc pl-5 space-y-1 ml-4">
+                        <li><span class="font-semibold">BTEB Scholarship:</span> Awarded the Bangladesh Technical Education Board (BTEB) Scholarship based on term academic performance.</li>
+                        <li><span class="font-semibold">Merit-Based Scholarship:</span> Received Merit-Based Scholarship for University Undergraduate Admission Test (2017).</li>
+                        <li><span class="font-semibold">Regional Astronomy Olympiad:</span> Champion of the Regional Astronomy Olympiad (2014).</li>
+                        <li><span class="font-semibold">Regional Physics Olympiad:</span> Silver Medalist in the Regional Physics Olympiad (2013).</li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <h2 id="services" class="section-title">Services & Outreach</h2>
+                <div class="space-y-3 text-sm">
+                    <p class="font-semibold mt-4 mb-2 primary-accent">University Service</p>
+                    <ul class="list-disc pl-5 space-y-1 ml-4">
+                        <li><span class="font-semibold">Workshop Conductor:</span> Conducted Poster Design, Presentation, and Web Development Workshops at Asian University for Women.</li>
+                        <li><span class="font-semibold">Technical Sessions:</span> Conducted Technical Sessions on Academic Research Paper Writing at Port City International University.</li>
+                        <li><span class="font-semibold">Professional Development:</span> Participated in Asian University for Women Faculty Training (2024) and PCIU Faculty Training Program (2023).</li>
+                        <li><span class="font-semibold">Student Mentorship:</span> Mentoring undergraduate students in research methodology and thesis projects.</li>
+                    </ul>
+
+                    <p class="font-semibold mt-4 mb-2 primary-accent">Community Service</p>
+                    <ul class="list-disc pl-5 space-y-1 ml-4">
+                        <li><span class="font-semibold">Flood Relief:</span> Volunteered in the Fundraising and Relief Committee for flood-affected areas (2024).</li>
+                        <li><span class="font-semibold">Programming Contest Volunteer:</span> Regional Programming Contest volunteer at CUET-CSE Fest.</li>
+                        <li><span class="font-semibold">EdTech Tutoring:</span> Provided online computer science tutoring for college and graduate students (2018–2023).</li>
+                    </ul>
+                </div>
+
+                <!-- Extracurricular -->
+                <h2 id="extracurricular" class="section-title">Extracurricular Activities</h2>
+                <div class="space-y-3 text-sm">
+                    <ul class="list-disc pl-5 space-y-1 ml-4">
+                        <li><span class="font-semibold">Community Support:</span> Active volunteering at local orphanages.</li>
+                        <li><span class="font-semibold">Athletics:</span> Participated in short-distance marathons for health awareness.</li>
+                        <li><span class="font-semibold">Fitness:</span> Calisthenics and personal fitness training.</li>
+                    </ul>
+                </div>
+
+                <div class="my-10 text-center text-xs text-gray-500">
+                    &copy; Abrar Taher. Last updated 2026.
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.closest('.fixed-header') && this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        const offset = document.querySelector('.fixed-header').offsetHeight;
+                        window.scrollTo({
+                            top: targetElement.offsetTop - offset,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
